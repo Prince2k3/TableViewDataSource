@@ -155,30 +155,30 @@ public class TableViewSectionDataSource: NSObject, UITableViewDataSource {
     }
     
     @objc(itemAtIndexPath:)
-    func item(at indexPath: NSIndexPath) -> AnyObject? {
+    public func item(at indexPath: NSIndexPath) -> AnyObject? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.item(at: indexPath)
     }
     
     @objc(cellItemAtIndexPath:)
-    func cellItem(at indexPath: NSIndexPath) -> TableViewDataSourceCellItem? {
+    public func cellItem(at indexPath: NSIndexPath) -> TableViewDataSourceCellItem? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.cellItem(at: indexPath)
     }
     
     @objc(dataSourceAtIndexPath:)
-    func dataSource(at indexPath: NSIndexPath) -> TableViewDataSource {
+    public func dataSource(at indexPath: NSIndexPath) -> TableViewDataSource {
         return dataSources![indexPath.section]
     }
     
     @objc(titleAtIndexPath:)
-    func title(at indexPath: NSIndexPath) -> String? {
+    public func title(at indexPath: NSIndexPath) -> String? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.title
     }
     
     @objc(sectionHeaderViewAtIndexPath:)
-    func sectionHeaderView(at indexPath: NSIndexPath) -> UIView? {
+    public func sectionHeaderView(at indexPath: NSIndexPath) -> UIView? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.sectionHeaderView
     }

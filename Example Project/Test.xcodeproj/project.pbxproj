@@ -13,13 +13,13 @@
 		D1122A8E1D5BA8B800A229AC /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = D1122A8D1D5BA8B800A229AC /* ViewController4.m */; };
 		D1122A911D5BAD3B00A229AC /* TestTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1122A901D5BAD3B00A229AC /* TestTextFieldCell.m */; };
 		D1122A931D5BAD4B00A229AC /* TestTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1122A921D5BAD4B00A229AC /* TestTextFieldCell.xib */; };
+		D1A489B91D74BD4D00BD170C /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A489B81D74BD4D00BD170C /* TableViewDataSource.swift */; };
 		D1ECB8B31D5B85FC00A70A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB8B21D5B85FC00A70A6C /* main.m */; };
 		D1ECB8B61D5B85FC00A70A6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB8B51D5B85FC00A70A6C /* AppDelegate.m */; };
 		D1ECB8B91D5B85FC00A70A6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB8B81D5B85FC00A70A6C /* ViewController.m */; };
 		D1ECB8BC1D5B85FC00A70A6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECB8BA1D5B85FC00A70A6C /* Main.storyboard */; };
 		D1ECB8BE1D5B85FC00A70A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1ECB8BD1D5B85FC00A70A6C /* Assets.xcassets */; };
 		D1ECB8C11D5B85FC00A70A6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ECB8BF1D5B85FC00A70A6C /* LaunchScreen.storyboard */; };
-		D1ECB8CA1D5B860800A70A6C /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB8C91D5B860800A70A6C /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +34,7 @@
 		D1122A8F1D5BAD3B00A229AC /* TestTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldCell.h; sourceTree = "<group>"; };
 		D1122A901D5BAD3B00A229AC /* TestTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldCell.m; sourceTree = "<group>"; };
 		D1122A921D5BAD4B00A229AC /* TestTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTextFieldCell.xib; sourceTree = "<group>"; };
+		D1A489B81D74BD4D00BD170C /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = ../../Sources/TableViewDataSource.swift; sourceTree = "<group>"; };
 		D1ECB8AE1D5B85FC00A70A6C /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECB8B21D5B85FC00A70A6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1ECB8B41D5B85FC00A70A6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		D1ECB8C01D5B85FC00A70A6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1ECB8C21D5B85FC00A70A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1ECB8C81D5B860700A70A6C /* Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test-Bridging-Header.h"; sourceTree = "<group>"; };
-		D1ECB8C91D5B860800A70A6C /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 		D1122A7A1D5B8C5F00A229AC /* TableViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				D1ECB8C91D5B860800A70A6C /* TableViewDataSource.swift */,
+				D1A489B81D74BD4D00BD170C /* TableViewDataSource.swift */,
 			);
 			name = TableViewDataSource;
 			sourceTree = "<group>";
@@ -239,11 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A489B91D74BD4D00BD170C /* TableViewDataSource.swift in Sources */,
 				D1ECB8B91D5B85FC00A70A6C /* ViewController.m in Sources */,
 				D1122A911D5BAD3B00A229AC /* TestTextFieldCell.m in Sources */,
 				D1ECB8B61D5B85FC00A70A6C /* AppDelegate.m in Sources */,
 				D1122A801D5B8CB600A229AC /* TestCell.m in Sources */,
-				D1ECB8CA1D5B860800A70A6C /* TableViewDataSource.swift in Sources */,
 				D1ECB8B31D5B85FC00A70A6C /* main.m in Sources */,
 				D1122A861D5B94B300A229AC /* ViewController2.m in Sources */,
 				D1122A8B1D5BA8AF00A229AC /* ViewController3.m in Sources */,

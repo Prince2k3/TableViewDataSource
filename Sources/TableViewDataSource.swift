@@ -17,9 +17,9 @@ public protocol TableViewDataSourceDelegate: class {
 
 @objc(MSTableViewDataSourceCellItem)
 open class TableViewDataSourceCellItem: NSObject {
-    var cellIdentifier: String?
-    var item: AnyObject?
-    var cellHeight: CGFloat?
+    open var cellIdentifier: String?
+    open var item: AnyObject?
+    open var cellHeight: CGFloat?
 }
 
 @objc(MSTableViewDataSource)

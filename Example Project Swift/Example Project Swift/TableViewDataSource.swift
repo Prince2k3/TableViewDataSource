@@ -33,7 +33,7 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
     open var reusableHeaderFooterViewIdentifier: String?
     open var editable: Bool = false
     open var movable: Bool = false
-    open var editableCells: [IndexPath: NSNumber]? // NSNumber represents the UITableViewCellEditingStyle
+    open var editableCells: [IndexPath: UITableViewCellEditingStyle]? // NSNumber represents the UITableViewCellEditingStyle
     open var movableCells: [IndexPath]?
     
     override init() {

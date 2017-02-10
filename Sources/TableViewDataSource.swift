@@ -90,6 +90,8 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
         if self.movable {
             if let movableCells = movableCells {
                 return movableCells.contains(indexPath)
+            } else {
+                return true // all
             }
         }
         return false
@@ -99,6 +101,8 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
         if self.editable {
             if let editableCells = editableCells {
                 return editableCells.keys.contains(indexPath)
+            } else {
+                return true // all
             }
         }
         return false

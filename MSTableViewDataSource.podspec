@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MSTableViewDataSource"
-  s.version      = "1.2.0"
+  s.version      = "1.2.1"
   s.summary      = "UITableView DataSource Class written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Sources", "Sources/**/*.{h,m,swift}"
-  s.exclude_files = "Example Project"
+  s.exclude_files = "Example Project Objc", "Example Project Swift"
 
   # s.public_header_files = "Classes/**/*.h"
 

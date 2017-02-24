@@ -35,6 +35,7 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
     open var movable: Bool = false
     open var editableCells: [IndexPath: NSNumber]? // NSNumber represents the UITableViewCellEditingStyle
     open var movableCells: [IndexPath]?
+    open var loadingMoreCellIdentifier: String?
     
     override init() {
         super.init()
@@ -81,6 +82,9 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
         }
         
         if let items = self.items {
+            if self.loadingMoreCellIdentifier != nil {
+                return items.count + 1
+            }
             return items.count
         }
         return 0
@@ -128,6 +132,8 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
             let cellItem = self.cellItem(at: indexPath)!
             identifier = cellItem.cellIdentifier
             item = cellItem.item
+        } else if let loadingMoreCellIdentifier = self.loadingMoreCellIdentifier, let items = self.items, items.count == indexPath.row {
+            identifier = loadingMoreCellIdentifier
         } else {
             item = self.item(at: indexPath)
             identifier = cellIdentifier

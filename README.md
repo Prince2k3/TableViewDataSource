@@ -25,7 +25,7 @@ extension MyTableViewCell: TableViewCellDataSource {
 }
 ```
 
-## Building from UITableViewCells from scratch
+## Building UITableViewCells from scratch
 
 ```
 var items: [String] = ["Apples", "Oranges", "Grapes", "Bannanas"]

@@ -6,7 +6,7 @@ This repo does have a sample projects you can download, view and see first hand 
 ## Working with UITableView
 Note: If you are using UITableViewCell as a nib file, be sure to register the cell to the table view you are using. Otherwise you won't see the cell.
 
-To use TableViewDataSource you'll need to initialize it and give it your UITableViewCell identifier. Once you have done that let the UITableView dataSource be set to the TableViewDataSource dataSource property. 
+To use TableViewDataSource you'll need to initialize it and give it your UITableViewCell identifier. Once you have done that set the UITableView dataSource be set to the TableViewDataSource dataSource property. 
 ```
    @IBOutlet weak var tableView: UITableView! {
      didSet {

@@ -4,8 +4,9 @@ UITableView DataSource Class written in Swift that moves away repetitive code an
 This repo does have a sample projects you can download, view and see first hand how things work. They are available in both ObjC and Swift.
 
 ## Working with UITableView
+Note: If you are using UITableViewCell as a nib file, be sure to register the cell to the table view you are using. Otherwise you won't see the cell.
 
-To use TableViewDataSource you'll need to initialize it and give it your UITableViewCell identifier. Once you have done that let the UITableView dataSource  be set to the TableViewDataSource dataSource property. 
+To use TableViewDataSource you'll need to initialize it and give it your UITableViewCell identifier. Once you have done that let the UITableView dataSource be set to the TableViewDataSource dataSource property. 
 ```
    @IBOutlet weak var tableView: UITableView! {
      didSet {

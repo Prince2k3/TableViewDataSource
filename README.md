@@ -7,7 +7,7 @@ This repo does have a sample projects you can download, view and see first hand 
 Note: If you are using UITableViewCell as a nib file, be sure to register the cell to the table view you are using. Otherwise you won't see the cell.
 
 To use TableViewDataSource you'll need to initialize it and give it your UITableViewCell identifier. Once you have done that set the UITableView dataSource be set to the TableViewDataSource dataSource property. 
-```
+```Swift
    @IBOutlet weak var tableView: UITableView! {
      didSet {
        self.tableView?.dataSource = self.dataSource
@@ -17,7 +17,7 @@ To use TableViewDataSource you'll need to initialize it and give it your UITable
   let dataSource: TableViewDataSource = TableViewDataSource(cellIdentifier: "<YourCellIdentifier>")
 ```
 In your UITableViewCell add this protocol `TableViewCellDataSource`. (I recommend that this be an extension to keep your cell and how your cell is configured separate.)
-```
+```Swift
 extension MyTableViewCell: TableViewCellDataSource {
    func configure(_ data: Any?) {
        /// setup your cell here     
@@ -27,7 +27,7 @@ extension MyTableViewCell: TableViewCellDataSource {
 
 ## Building UITableViewCells from scratch
 
-```
+```Swift
 var items: [String] = ["Apples", "Oranges", "Grapes", "Bannanas"]
 ...
 func buildTable() {
@@ -46,7 +46,7 @@ func buildTable() {
 ...
 ```
 ## Working with UITableView sections
-```
+```Swift
 var items: [String] = ["Apples", "Oranges", "Grapes", "Bannanas"]
 ...
 func buildTable() {

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MSTableViewDataSource"
-  s.version      = "1.5.1"
+  s.version      = "1.5.2"
   s.summary      = "UITableView DataSource Class written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.ios.deployment_target = "9.0"
+   s.ios.deployment_target = "10.0"
    #s.platform     = :ios, "10.0"
 
   #  When using multiple platforms

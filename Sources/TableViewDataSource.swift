@@ -13,6 +13,9 @@ public protocol TableViewDataSourceDelegate: class {
     
     @objc(dataSource:commitEditingStyleForIndexPath:)
     optional func commitEditingStyle(_ editingStyle: UITableViewCellEditingStyle, forIndexPath indexPath: IndexPath)
+    
+    @objc(dataSourceChangeCellIdentifier:forIndexPath:)
+    optional func changeCellIdentifier(_ identifier: String?, forIndexPath indexPath: IndexPath) -> String?
 }
 
 @objc(MSTableViewDataSourceCellItem)
@@ -28,7 +31,6 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
     internal(set) var cellIdentifier: String?
     open var items: [Any]?
     open var title: String?
-    open weak var delegate: TableViewDataSourceDelegate?
     open var sectionHeaderView: UIView?
     open var reusableHeaderFooterViewIdentifier: String?
     open var editable: Bool = false
@@ -36,6 +38,7 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
     open var editableCells: [IndexPath: NSNumber]? // NSNumber represents the UITableViewCellEditingStyle
     open var movableCells: [IndexPath]?
     open var loadingMoreCellIdentifier: String?
+    open weak var delegate: TableViewDataSourceDelegate?
     
     override init() {
         super.init()
@@ -123,7 +126,6 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
         }
     }
     
-    
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var identifier: String?
         var item: Any?
@@ -139,6 +141,8 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
             identifier = cellIdentifier
         }
         
+        identifier = self.delegate?.changeCellIdentifier?(identifier, forIndexPath: indexPath) ?? identifier
+
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier!, for: indexPath)
         
         if cell is TableViewCellDataSource {
@@ -153,11 +157,16 @@ open class TableViewDataSource: NSObject, UITableViewDataSource {
 
 @objc(MSTableViewSectionDataSource)
 open class TableViewSectionDataSource: NSObject, UITableViewDataSource {
-    
-    open weak var delegate: TableViewDataSourceDelegate?
     open fileprivate(set) var dataSources: [TableViewDataSource]?
     open var enableIndexing: Bool  = false
     open var showDefaultHeaderTitle: Bool = true
+    open weak var delegate: TableViewDataSourceDelegate? {
+        didSet {
+            self.dataSources?.forEach {
+                $0.delegate = self.delegate
+            }
+        }
+    }
     
     public convenience init(dataSources: [TableViewDataSource]) {
         self.init()
@@ -273,7 +282,6 @@ open class TableViewSectionDataSource: NSObject, UITableViewDataSource {
         
         return UILocalizedIndexedCollation.current().sectionTitles
     }
-    
     
     open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
